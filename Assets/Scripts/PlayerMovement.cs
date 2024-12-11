@@ -48,11 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies" , "Danger")))
         {
             isAlive = false;
-            myAnimator.SetTrigger("Diying");
             DeadForce();
+            myAnimator.SetTrigger("Diying");
+            
         }
     }
 
