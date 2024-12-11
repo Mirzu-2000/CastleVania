@@ -11,11 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Ladder
+  - Player
+  - Background
+  - Mushroom
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: 'Platform Layer '
     uniqueID: 3796975141
+    locked: 0
+  - name: Ladder Layer
+    uniqueID: 679324121
     locked: 0
   - name: Player Layer
     uniqueID: 2557566025
