@@ -20,7 +20,7 @@ TagManager:
   - Enemies
   - Danger
   - Bullet
-  - 
+  - Intaractables
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Danger Layer
     uniqueID: 740965025
+    locked: 0
+  - name: Intaractables Layer
+    uniqueID: 4076990123
     locked: 0
   - name: Enemy Layer
     uniqueID: 571662329

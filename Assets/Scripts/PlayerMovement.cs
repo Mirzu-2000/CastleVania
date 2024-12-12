@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             DeadForce();
             myAnimator.SetTrigger("Diying");
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
             
         }
     }
