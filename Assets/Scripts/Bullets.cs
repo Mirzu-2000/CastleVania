@@ -1,48 +1,3 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Bullets : MonoBehaviour
-{
-    [SerializeField] float bulletSpeed = 20f;
-    Rigidbody2D myRiggedbody;
-    [SerializeField]PlayerMovement player;
-    float xSpeed;
-    
-    void Start()
-    {
-        myRiggedbody = GetComponent<Rigidbody2D>();
-        player = GetComponent<PlayerMovement>();
-        xSpeed = player.transform.localScale.x * bulletSpeed;
-    }
-
-
-    void Update()
-    {
-        myRiggedbody.velocity = new Vector2(bulletSpeed, 0f);
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Enemy")
-        {
-            Destroy(other.gameObject);
-        }
-        Destroy(gameObject);
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-    }
-
-
-
-}
-*/
-
 
 using System.Collections;
 using System.Collections.Generic;
@@ -52,7 +7,7 @@ public class Bullets : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 20f;
     Rigidbody2D myRigidbody;
-    [SerializeField] PlayerMovement player; // Drag and drop the player object in the Inspector
+    [SerializeField] PlayerMovement player; 
     float xSpeed;
 
     void Start()
