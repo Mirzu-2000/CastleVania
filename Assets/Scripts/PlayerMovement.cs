@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float impulseDeadForce = 5f;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
 
     // Cached references to components
     Rigidbody2D myRigidbody; 
@@ -17,8 +19,10 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeetCollider;
 
+    //For Climbing
     float gravityScaleAtStart;
 
+    //For Checking Death
     bool isAlive = true;
 
     // Input tracking
@@ -63,6 +67,12 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive) { return; }
+        Instantiate(bullet, gun.position, gun.rotation);
+    } 
 
     void OnMove(InputValue value)
     {
