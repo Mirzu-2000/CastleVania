@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float impulseDeadForce = 5f;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform gun;
+    [SerializeField] LevelRestart levelRestart;
+    [SerializeField] float restartDelay = 0.5f;
 
     // Cached references to components
     Rigidbody2D myRigidbody; 
@@ -57,9 +59,17 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             DeadForce();
             myAnimator.SetTrigger("Diying");
-            FindObjectOfType<GameSession>().ProcessPlayerDeath();
-            
+            StartCoroutine(RestaetDelay());
+            // FindObjectOfType<GameSession>().ProcessPlayerDeath();
+
         }
+    }
+
+    IEnumerator RestaetDelay()
+    {
+        yield return new WaitForSecondsRealtime(restartDelay);
+        levelRestart.RestartLevel();
+
     }
 
     void DeadForce()

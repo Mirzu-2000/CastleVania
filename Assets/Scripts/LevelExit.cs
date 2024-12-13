@@ -13,7 +13,7 @@ public class LevelExit : MonoBehaviour
     }
 
 
-    IEnumerator LoadNextLevel()
+    public IEnumerator LoadNextLevel()
 
     {
         yield return new WaitForSecondsRealtime(levelLoadDelay);
