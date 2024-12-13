@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1320254554883455056}
   - component: {fileID: 8514355613629841481}
   m_Layer: 14
-  m_Name: Square
+  m_Name: Level Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -217977173
-  m_SortingLayer: 8
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f16616af6d9d3bd4996402a30536016f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad107a32ac790a4489094a960aaba3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLoadDelay: 0.5
