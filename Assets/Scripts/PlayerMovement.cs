@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             DeadForce();
             myAnimator.SetTrigger("Diying");
             StartCoroutine(RestaetDelay());
-            // FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            
 
         }
     }
