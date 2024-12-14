@@ -1,36 +1,3 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-
-public class LevelUI : MonoBehaviour
-{
-    [SerializeField] private GameObject levelPanel;
-    [SerializeField] private TextMeshProUGUI levelText;
-    //[SerializeField] private TextMeshProUGUI scoreText;
-
-    public int levelNumber = 1;
-
-    private void Update()
-    {
-        UpdateLevelText();
-    }
-    
-    private void UpdateLevelText()
-    {
-        levelText.text = "Level: " + levelNumber;
-    }
-
-
-
-    private void HideLevelPanel()
-    {
-        levelPanel.SetActive(false);
-    }
-}
-*/
-
-
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -152,7 +119,7 @@ public class LevelUI : MonoBehaviour
     }
 
     /// Displays the Game Over panel and pauses the game.
-    /// This can be called from other scripts (e.g., LevelManager).
+    /// This can be called from other scripts ( LevelManager).
     public void ShowGameOverPanel()
     {
         if (gameOverPanel != null)

@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 0}
   mainMenuButton: {fileID: 0}
+  playButton: {fileID: 0}

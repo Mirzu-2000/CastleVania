@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [Header("Game Over Panel")]
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private Button mainMenuButton;
+
 
 
     private int currentSceneIndex;
@@ -41,14 +43,14 @@ public class LevelManager : MonoBehaviour
 
         if (mainMenuButton != null)
             mainMenuButton.onClick.AddListener(MainMenuOnClick);
-
-       
+        
     }
 
     private void MainMenuOnClick()
     {
         Time.timeScale = 1; // Ensure the game resumes before loading the menu
         SceneManager.LoadScene(0); // Assuming Main Menu is scene 0
+        Destroy(gameObject);
     }
 
     private void OnLevelWasLoaded(int level)
@@ -61,7 +63,7 @@ public class LevelManager : MonoBehaviour
  
     public void LoadNextLevel()
     {
-        if (currentSceneIndex < SceneManager.sceneCountInBuildSettings - 1)
+        if (currentSceneIndex < SceneManager.sceneCountInBuildSettings )
         {
             SceneManager.LoadScene(currentSceneIndex + 1);
         }
