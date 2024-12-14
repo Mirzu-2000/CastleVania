@@ -1,9 +1,7 @@
 using System;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private Button mainMenuButton;
 
-
+    //[SerializeField] private int mainMenuSceneIndex = 0; // Index for the main menu scene
 
     private int currentSceneIndex;
 
@@ -37,13 +35,10 @@ public class LevelManager : MonoBehaviour
         AddButtonListeners();
     }
 
-
     private void AddButtonListeners()
     {
-
         if (mainMenuButton != null)
             mainMenuButton.onClick.AddListener(MainMenuOnClick);
-        
     }
 
     private void MainMenuOnClick()
@@ -60,10 +55,9 @@ public class LevelManager : MonoBehaviour
     }
 
     /// Loads the next level if there is one, or shows the Game Over panel if in the last level.
- 
     public void LoadNextLevel()
     {
-        if (currentSceneIndex < SceneManager.sceneCountInBuildSettings )
+        if (currentSceneIndex < SceneManager.sceneCountInBuildSettings - 1)
         {
             SceneManager.LoadScene(currentSceneIndex + 1);
         }
@@ -79,16 +73,13 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-
     /// Reloads the current level.
     public void RestartLevel()
     {
         SceneManager.LoadScene(currentSceneIndex);
     }
 
-    
     /// Displays the Game Over panel and pauses the game.
-    
     public void ShowGameOverPanel()
     {
         if (gameOverPanel != null)
@@ -99,6 +90,7 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 0; // Pause the game
     }
 
+    
     /// Hides the Game Over panel and resumes the game.
     public void HideGameOverPanel()
     {
