@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a09e2fe046df9b4baaf815387987155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
+  runSpeed: 8
   jumpSpeed: 20
   climbSpeed: 5
   impulseDeadForce: 18
@@ -162,6 +162,9 @@ MonoBehaviour:
   gun: {fileID: 4116450457055910088}
   restartDelay: 0.5
   levelManager: {fileID: 0}
+  jumpSFX: {fileID: 8300000, guid: 28b89c5301db04d4cbb1285e17c61884, type: 3}
+  laserSFX: {fileID: 8300000, guid: 12bb1808fedc1d84c88e73351268640f, type: 3}
+  diedSFX: {fileID: 8300000, guid: 4fe96c216cbd2cb4a844a2ed14e5402b, type: 3}
 --- !u!50 &4116450456385205436
 Rigidbody2D:
   serializedVersion: 4

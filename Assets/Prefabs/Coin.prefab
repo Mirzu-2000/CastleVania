@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 0}
-  coinPickupSFX: {fileID: 8300000, guid: 23265ab6343540b48b0df77491d09bca, type: 3}
+  coinPickupSFX: {fileID: 8300000, guid: 746c9e71739f352418bef7ca7668193b, type: 3}
 --- !u!58 &3274199137145665819
 CircleCollider2D:
   m_ObjectHideFlags: 0

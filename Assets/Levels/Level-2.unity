@@ -35988,21 +35988,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4116450456385205411, guid: 0f06bc985d4c24141a6d03bec0613762, type: 3}
-      propertyPath: runSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116450456385205411, guid: 0f06bc985d4c24141a6d03bec0613762, type: 3}
-      propertyPath: jumpSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116450456385205411, guid: 0f06bc985d4c24141a6d03bec0613762, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 534438842}
-    - target: {fileID: 4116450456385205411, guid: 0f06bc985d4c24141a6d03bec0613762, type: 3}
-      propertyPath: levelRestart
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4116450456385205414, guid: 0f06bc985d4c24141a6d03bec0613762, type: 3}
       propertyPath: m_Name
       value: Player
