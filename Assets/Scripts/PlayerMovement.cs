@@ -12,8 +12,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float impulseDeadForce = 5f;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform gun;
-    [SerializeField] LevelRestart levelRestart;
+   // [SerializeField] LevelRestart levelRestart;
     [SerializeField] float restartDelay = 0.5f;
+    [SerializeField] LevelManager levelManager;
+   
 
     // Cached references to components
     Rigidbody2D myRigidbody; 
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
         gravityScaleAtStart = myRigidbody.gravityScale;
+       /// levelManager = gameObject.GetComponent<LevelManager>();
     }
 
     void Update()
@@ -60,17 +63,34 @@ public class PlayerMovement : MonoBehaviour
             DeadForce();
             myAnimator.SetTrigger("Diying");
             StartCoroutine(RestaetDelay());
+           
             
 
         }
     }
 
-    IEnumerator RestaetDelay()
-    {
-        yield return new WaitForSecondsRealtime(restartDelay);
-        levelRestart.RestartLevel();
+     IEnumerator RestaetDelay()
+     {
+         yield return new WaitForSecondsRealtime(restartDelay);
+         levelManager.RestartLevel();
 
+     }
+ 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Level Exit"))
+        {
+            Debug.Log("Level Exit");
+            levelManager.LoadNextLevel();
+        }
+        else if(other.gameObject.CompareTag("GameOver"))
+        {
+            Debug.Log("GameOver");
+
+            levelManager.ShowGameOverPanel();
+        }
     }
+
 
     void DeadForce()
     {
