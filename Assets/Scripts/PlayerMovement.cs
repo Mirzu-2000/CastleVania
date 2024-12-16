@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
+    [SerializeField] float impulseDeadForce = 5f;
 
     // Cached references to components
     Rigidbody2D myRigidbody; 
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D myFeetCollider;
 
     float gravityScaleAtStart;
+
+    bool isAlive = true;
 
     // Input tracking
     Vector2 moveInput;
@@ -33,16 +36,37 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive) { return; }
         // Handle running and flipping logic every frame
         Run();
         FlipPlayer();
         Climbing();
+        Die();
 
 
     }
 
+    void Die()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies" , "Danger")))
+        {
+            isAlive = false;
+            DeadForce();
+            myAnimator.SetTrigger("Diying");
+            
+        }
+    }
+
+    void DeadForce()
+    {
+        myRigidbody.AddForce(Vector3.up * impulseDeadForce, ForceMode2D.Impulse);
+
+    }
+
+
     void OnMove(InputValue value)
     {
+        if (!isAlive) { return; }
         // Capture movement input from the player
         moveInput = value.Get<Vector2>();
         //Debug.Log(moveInput); // Log the input values for debugging purposes
@@ -50,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
+        if (!isAlive) { return; }
         // Ensure the player can only jump when touching the ground layer
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
 
@@ -62,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Run()
     {
+        if (!isAlive) { return; }
         // Calculate player velocity based on input and apply horizontal movement
         Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.velocity.y);
         myRigidbody.velocity = playerVelocity;
@@ -107,6 +133,6 @@ public class PlayerMovement : MonoBehaviour
         myAnimator.SetBool("IsClimbing", playerHasClimbingVelocity);
     }
 
-
+    
 
 }
