@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     // Cached references to components
     Rigidbody2D myRigidbody; 
     Animator myAnimator;
-    CapsuleCollider2D myCapsuleCollider;
+    CapsuleCollider2D myBodyCollider;
+    BoxCollider2D myFeetCollider;
 
     float gravityScaleAtStart;
 
@@ -25,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
         // Initialize component references
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        myBodyCollider = GetComponent<CapsuleCollider2D>();
+        myFeetCollider = GetComponent<BoxCollider2D>();
         gravityScaleAtStart = myRigidbody.gravityScale;
     }
 
@@ -49,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     void OnJump(InputValue value)
     {
         // Ensure the player can only jump when touching the ground layer
-        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
 
         // Add vertical velocity to simulate jumping when the input is pressed
         if (value.isPressed)
@@ -86,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
     void Climbing()
     {
         // Ensure the player can only Climbs when touching the Ladder layer
-        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) 
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) 
         {
            myRigidbody.gravityScale = gravityScaleAtStart;
             myAnimator.SetBool("IsClimbing", false);
