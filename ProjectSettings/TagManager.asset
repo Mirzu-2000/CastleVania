@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Level Exit
+  - GameOver
   layers:
   - Default
   - TransparentFX

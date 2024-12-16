@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4116450456385205438}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1737401271
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 792382873, guid: ed3a8b4859977f04d9454a5c3a2bcb24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -154,12 +154,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a09e2fe046df9b4baaf815387987155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 8
-  jumpSpeed: 18
+  runSpeed: 10
+  jumpSpeed: 20
   climbSpeed: 5
   impulseDeadForce: 18
   bullet: {fileID: 5857361251400149602, guid: a785c86b666d10e4a8848b63e168761a, type: 3}
   gun: {fileID: 4116450457055910088}
+  restartDelay: 0.5
+  levelManager: {fileID: 0}
 --- !u!50 &4116450456385205436
 Rigidbody2D:
   serializedVersion: 4
