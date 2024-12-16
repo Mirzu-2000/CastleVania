@@ -21,13 +21,13 @@ and escape the castle alive!
 ## **Gameplay Screenshots** 📸  
 
 1. **Main Menu**  
-   ![Main Menu](ScreenShots/MainMenuScreenshot .png)  
+   ![Main Menu](ScreenShots/MainMenuScreenshot.png)  
 
 2. **Level Design with Tilemaps**  
    ![Tilemap Design](ScreenShots/LevelsDesign-TileMapsScreenshot.png)  
 
 3. **Cinemachine Camera in Action**  
-   ![Cinemachine Camera](ScreenShots/CineMachine Screenshot.png)  
+   ![Cinemachine Camera](ScreenShots/CineMachineScreenshot.png)  
 
 4. **Collecting Coins and Shooting Enemies**  
    ![Gameplay](ScreenShots/ShootingEnemiesScreenshot.png)  
