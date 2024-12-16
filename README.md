@@ -21,23 +21,23 @@ and escape the castle alive!
 ## **Gameplay Screenshots** 📸  
 
 1. **Main Menu**  
-   ![Main Menu](Screenshots\MainMenuScreenshot.png)  
+   ![Main Menu](ScreenShots/MainMenuScreenshot .png)  
 
 2. **Level Design with Tilemaps**  
-   ![Tilemap Design](Screenshots\LevelsDesign-TailMapsScreenShot.png)  
+   ![Tilemap Design](ScreenShots/LevelsDesign-TileMapsScreenshot.png)  
 
 3. **Cinemachine Camera in Action**  
-   ![Cinemachine Camera](Screenshot\CineMachineScreenshot.png)  
+   ![Cinemachine Camera](ScreenShots/CineMachine Screenshot.png)  
 
 4. **Collecting Coins and Shooting Enemies**  
-   ![Gameplay](Screenshot\ShootingEnemiesScreendshot.png)  
+   ![Gameplay](ScreenShots/ShootingEnemiesScreenshot.png)  
 
 ---
 
 ## **Gameplay Video** 🎥  
 
 Check out the gameplay video to see **Castle Adventure** in action!  
-[![Watch the gameplay video](Gameplay.png)](https://www.youtube.com/watch?v=toet0yVyqRg)
+[![Watch the gameplay video](ScreenShots/GamePlay.png)](https://www.youtube.com/watch?v=toet0yVyqRg)
 
 ---
 
