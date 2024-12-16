@@ -4983,3 +4983,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 1342784556}
+  startSFX: {fileID: 8300000, guid: 72590adfe26b4b744b907ea5eeea8845, type: 3}

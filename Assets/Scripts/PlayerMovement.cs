@@ -12,10 +12,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float impulseDeadForce = 5f;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform gun;
-   // [SerializeField] LevelRestart levelRestart;
     [SerializeField] float restartDelay = 0.5f;
     [SerializeField] LevelManager levelManager;
-   
+
+    [Header("Player SFX")]
+    [SerializeField] AudioClip jumpSFX;
+    [SerializeField] AudioClip laserSFX;
+    [SerializeField] AudioClip diedSFX;
+
+
+
+
 
     // Cached references to components
     Rigidbody2D myRigidbody; 
@@ -62,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             DeadForce();
             myAnimator.SetTrigger("Diying");
+            AudioSource.PlayClipAtPoint(diedSFX, myRigidbody.transform.position);
             StartCoroutine(RestaetDelay());
            
             
@@ -102,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
     void OnFire(InputValue value)
     {
         if (!isAlive) { return; }
+        AudioSource.PlayClipAtPoint(laserSFX, myRigidbody.transform.position);
         Instantiate(bullet, gun.position, gun.rotation);
     } 
 
@@ -122,6 +131,8 @@ public class PlayerMovement : MonoBehaviour
         // Add vertical velocity to simulate jumping when the input is pressed
         if (value.isPressed)
         {
+            AudioSource.PlayClipAtPoint(jumpSFX, myRigidbody.transform.position);
+
             myRigidbody.velocity += new Vector2(0f, jumpSpeed);
         }
     }
